@@ -1,0 +1,30 @@
+.registerMainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 50vh;
+  width: 34vw;
+  padding: 2vw;
+}
+
+.inp {
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.registerRegisterButton {
+  border: none;
+  background-color: #2292e2;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  align-self: flex-start;
+}
