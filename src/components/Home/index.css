@@ -1,8 +1,6 @@
-.link{
-    text-decoration:none;
+.link {
+  text-decoration: none;
 }
-
-
 
 .HomeMinContainer {
   display: flex;
@@ -23,7 +21,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid black;
   align-items: center;
   height: 80vh;
   width: 95vw;

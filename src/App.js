@@ -1,11 +1,12 @@
 import {Component} from 'react'
 
-import {Route, Switch, BrowserRouter} from 'react-router-dom'
+import {Route, Switch, BrowserRouter, Redirect} from 'react-router-dom'
 
 import Info from './context/userDetails/userdetail'
 
 import Home from './components/Home'
 import Register from './components/Register'
+import NotFound from './components/NotFound'
 
 import './App.css'
 
@@ -35,6 +36,8 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/register" component={Register} />
+            <Route exact path="/NotFound" component={NotFound} />
+            <Redirect to="/NotFound" />
           </Switch>
         </Info.Provider>
       </BrowserRouter>

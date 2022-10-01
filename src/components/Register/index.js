@@ -31,12 +31,12 @@ class Register extends Component {
 
   check = () => {
     const {history} = this.props
-    history.push('/')
+    history.replace('/')
   }
 
   render() {
     const {na, verifyText} = this.state
-    const errorMsgContent = verifyText ? <p>Enter Your Name</p> : null
+    const errorMsgContent = verifyText ? <p>Please enter your name</p> : null
     return (
       <Info.Consumer>
         {value => {
@@ -51,7 +51,8 @@ class Register extends Component {
             updateTopic(event.target.value)
           }
 
-          const verify = () => {
+          const verify = event => {
+            event.preventDefault()
             if (na === '') {
               this.setState({verifyText: true})
             } else {
@@ -62,6 +63,13 @@ class Register extends Component {
 
           return (
             <div className="registerMainContainer">
+              <div className="websiteLogo">
+                <img
+                  className="websiteLogo"
+                  src="https://assets.ccbp.in/frontend/react-js/meetup/website-logo-img.png "
+                  alt="website logo"
+                />
+              </div>
               <div>
                 <img
                   src="https://assets.ccbp.in/frontend/react-js/meetup/website-register-img.png"
@@ -69,7 +77,7 @@ class Register extends Component {
                 />
               </div>
               <form className="formContainer">
-                <h1>Lets Meet up</h1>
+                <h1>Let us join</h1>
                 <label htmlFor="name">Name</label>
                 <input
                   onChange={TupdateName}
@@ -78,15 +86,17 @@ class Register extends Component {
                   id="name"
                 />
 
-                <label htmlFor="options">Topic</label>
+                <label htmlFor="options">TOPICS</label>
                 <select onChange={TupdateTopic} className="inp" id="options">
                   {topicsList.map(each => (
-                    <option key={each.id}>{each.displayText}</option>
+                    <option value={each.id} key={each.id}>
+                      {each.displayText}
+                    </option>
                   ))}
                 </select>
                 <button
                   onClick={verify}
-                  type="button"
+                  type="submit"
                   className="registerRegisterButton"
                 >
                   Register Now

@@ -14,7 +14,7 @@ class Home extends Component {
           const renderRegisterView = () => (
             <div className="HomeContentContainer">
               <h1>Welcome to meetup</h1>
-              <p>Please select the topic</p>
+              <p>Please register for the topic</p>
               <Link to="/register">
                 <button type="button" className="HomeRegisterButton">
                   Register
@@ -29,7 +29,7 @@ class Home extends Component {
           )
           const renderRegisteredView = () => (
             <div className="HomeContentContainer">
-              <h1>Hi {name}</h1>
+              <h1>Hello {name}</h1>
               <p>Welcome to {topic}</p>
               <img
                 src="https://assets.ccbp.in/frontend/react-js/meetup/meetup-img.png"
